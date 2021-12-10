@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        run: |
+          git config --global user.email "pobre@mail.com"
+          git config --global user.name "pobre"
       - name: step_1
         run: |
           mkdir src
