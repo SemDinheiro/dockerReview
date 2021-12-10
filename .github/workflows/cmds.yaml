@@ -5,6 +5,16 @@ jobs:
   exec_cmd:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: step_1
         run: |
-          echo 'step_1 working!'
+          mkdir src
+          touch src/app.js
+          npm init
+          npm install --save-prod express body-parser
+      - name: step_2
+        run: |
+          git add .
+          git commit -m 'Commiting'
+          git push origin main
