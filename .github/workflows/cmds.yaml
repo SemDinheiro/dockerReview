@@ -1,9 +1,11 @@
 name: Commands
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+
 jobs:
-  test_cmd:
+  exec_cmd:
     runs-on: ubuntu-latest
     steps:
-      name: step_1
-      run: |
+      - name: step_1
+      - run: |
         echo 'step_1 working!'
