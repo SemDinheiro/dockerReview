@@ -1,0 +1,9 @@
+name: Commands
+on: workflow_dispatch
+jobs:
+  test_cmd:
+    runs-on: ubuntu-latest
+    steps:
+      name: step_1
+      run: |
+        echo 'step_1 working!'
