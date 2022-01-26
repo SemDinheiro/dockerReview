@@ -1,19 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-
 const app = express();
-app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.status(200).send('Aprenda!');
+  res.status(200).send('Root');
 });
 
-app.get('/error', (req, res) => {
-  throw new Error('some error');
-});
-
-app.use((err, req, res, next) => {
-  res.status(500).send('Error');
+app.get('/costumer', (req, res) => {
+  res.status(200).send('Costumer');
 });
 
 app.listen(3000, () => {
