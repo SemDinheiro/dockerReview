@@ -9,14 +9,12 @@ jobs:
         uses: actions/checkout@v2
       - name: step_1
         run: |
-          mkdir src
-          touch src/app.js
-          npm init -y
-          npm install --save-prod express body-parser
-      - name: step_2
-        run: |
-          git config --global user.email "pobre@mail.com"
-          git config --global user.name "pobre"
-          git add .
-          git commit -m 'Commiting'
-          git push origin main
+          npm install --save-prod express
+          npm run dev
+      #- name: step_2
+        #run: |
+          #git config --global user.email "pobre@mail.com"
+          #git config --global user.name "pobre"
+          #git add .
+          #git commit -m 'Commiting'
+          #git push origin main
