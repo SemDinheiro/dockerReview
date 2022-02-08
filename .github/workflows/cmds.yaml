@@ -11,7 +11,7 @@ jobs:
         run: |
           docker pull rabbitmq:alpine
           docker run -d --hostname theRabbit --name aRabbit rabbitmq:alpine
-          
+          docker logs aRabbit
           #npm install --save-prod express
           #npm run dev
       #- name: step_2
