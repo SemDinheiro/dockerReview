@@ -9,11 +9,11 @@ jobs:
         uses: actions/checkout@v2
       - name: step_1
         run: |
-          docker pull rabbitmq:alpine
-          docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
-          docker logs aRabbit
-          #npm install --save-prod express
-          #npm run dev
+          #docker pull rabbitmq:alpine
+          #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
+          #docker logs aRabbit
+          npm install
+          npm run dev
       #- name: step_2
         #run: |
           #git config --global user.email "pobre@mail.com"
