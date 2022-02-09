@@ -13,11 +13,10 @@ jobs:
           #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
           #docker logs aRabbit
           docker build --tag docker-review .
-          docker images
-          docker tag docker-review:latest docker-review:v1.0.0
-          docker images
-          docker rmi docker-review:v1.0.0
-          docker images
+          docker run -d -p 4000:3000 --name docker-review docker-review:latest
+          docker ps
+          docker stop docker-review
+          docker ps --all
       #- name: step_2
         #run: |
           #git config --global user.email "pobre@mail.com"
