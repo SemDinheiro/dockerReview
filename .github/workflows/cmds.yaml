@@ -12,8 +12,12 @@ jobs:
           #docker pull rabbitmq:alpine
           #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
           #docker logs aRabbit
-          npm install
-          npm run dev
+          docker build --tag docker-review .
+          docker images
+          docker tag docker-review:latest docker-review:v1.0.0
+          docker images
+          docker rmi docker-review:v1.0.0
+          docker images
       #- name: step_2
         #run: |
           #git config --global user.email "pobre@mail.com"
