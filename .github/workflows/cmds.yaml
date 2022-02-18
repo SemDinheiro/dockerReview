@@ -14,9 +14,11 @@ jobs:
           #docker logs aRabbit
           docker build --tag docker-review .
           docker run -d -p 4000:3000 --name docker-review docker-review:latest
-          docker ps
+          docker container logs --details docker-review
+          curl localhost:4000
+          curl localhost:4000/costumer
+          docker container logs --details docker-review
           docker stop docker-review
-          docker ps --all
       #- name: step_2
         #run: |
           #git config --global user.email "pobre@mail.com"
