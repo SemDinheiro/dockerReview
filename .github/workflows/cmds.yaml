@@ -13,11 +13,12 @@ jobs:
           #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
           #docker logs aRabbit
           docker build --tag docker-review .
-          docker run -p 4000:3000 --name docker-review docker-review:latest
-          #docker container logs docker-review
+          docker run -d -p 4000:3000 --name docker-review docker-review:latest
+          docker container logs docker-review
+          curl --version
           #curl localhost:4000
           #curl localhost:4000/costumer
-          #docker container logs docker-review
+          docker container logs docker-review
           docker stop docker-review
       #- name: step_2
         #run: |
