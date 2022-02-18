@@ -14,4 +14,5 @@ app.get('/costumer', (req, res) => {
 
 app.listen(PORT, () => {
   console.log('running at http://' + HOST + ':' + PORT);
+  setTimeout(process.exit(), 10000);
 });
