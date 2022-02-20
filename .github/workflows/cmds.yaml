@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       set_docker-review:
-        image: dockerhub-username:docker-review
+        image: docker-review
         ports:
           - 4000:3000
     steps:
