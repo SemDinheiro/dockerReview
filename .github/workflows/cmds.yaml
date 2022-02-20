@@ -15,17 +15,17 @@ jobs:
       - name: AppTest
         run: |
           docker build --tag docker-review .
-  #run_images:
-    #needs: get_images
-    #runs-on: ubuntu-latest
-    #services:
-      #set_docker-review:
-        #image: dockerhub-username:docker-review
-        #ports:
-          #- 4000:3000
-    #steps:
-      #- name: get from service app_test
-        #run: http://localhost:4000
+  run_images:
+    needs: get_images
+    runs-on: ubuntu-latest
+    services:
+      set_docker-review:
+        image: dockerhub-username:docker-review
+        ports:
+          - 4000:3000
+    steps:
+      - name: get from service app_test
+        run: http://localhost:4000
 
 
 
