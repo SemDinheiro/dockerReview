@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: run_container
         run: |
-          docker run -d -p 4000:3000 app-test docker-review
+          docker run -d -p 4000:3000 docker-review
       - name: get from service app_test
         run: |
           http://localhost:4000
