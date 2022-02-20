@@ -15,10 +15,19 @@ jobs:
       - name: AppTest
         run: |
           docker build --tag docker-review .
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: myImage
+          path: docker-review
   run_images:
     needs: get_images
     runs-on: ubuntu-latest
     steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docker-review
       - name: run_container
         run: |
           docker run -d -p 4000:3000 docker-review
