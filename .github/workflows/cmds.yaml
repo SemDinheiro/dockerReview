@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: myImage
-          path: docker-review
+          path: ./
   run_images:
     needs: get_images
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
-          name: docker-review
+          name: myImage
       - name: run_container
         run: |
           docker run -d -p 4000:3000 docker-review
