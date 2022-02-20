@@ -13,6 +13,7 @@ jobs:
           #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
           #docker logs aRabbit
       - name: AppTest
+        run: |
           docker build --tag docker-review .
   #run_images:
     #needs: get_images
