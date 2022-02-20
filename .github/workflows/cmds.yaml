@@ -2,7 +2,7 @@ name: Commands
 on:
   workflow_dispatch:
 jobs:
-  get images:
+  get_images:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,6 +14,19 @@ jobs:
           #docker logs aRabbit
       - name: AppTest
           docker build --tag docker-review .
+  run_images:
+    needs: get_images
+    runs-on: ubuntu-latest
+    services:
+      image: dockerhub-username:docker-review
+      ports:
+        - 4000:3000
+    steps:
+      - name: get from service app_test
+        run: http://localhost:4000
+
+
+
       #- name: Commit
         #run: |
           #git config --global user.email "pobre@mail.com"
