@@ -2,24 +2,19 @@ name: Commands
 on:
   workflow_dispatch:
 jobs:
-  exec_cmd:
+  get images:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: step_1
+      - name: RabbitMQ
         run: |
           #docker pull rabbitmq:alpine
           #docker run --hostname theRabbit --name aRabbit rabbitmq:alpine
           #docker logs aRabbit
+      - name: AppTest
           docker build --tag docker-review .
-          docker run -d -p 4000:3000 --name docker-review docker-review:latest
-          docker container logs docker-review
-          curl http://localhost:4000
-          curl http://localhost:4000/costumer
-          docker container logs docker-review
-          docker stop docker-review
-      #- name: step_2
+      #- name: Commit
         #run: |
           #git config --global user.email "pobre@mail.com"
           #git config --global user.name "pobre"
