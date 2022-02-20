@@ -15,10 +15,11 @@ jobs:
       - name: AppTest
         run: |
           docker build --tag docker-review .
+          ls -a
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: myImage
+          name: docker-review
           path: ./
   run_images:
     needs: get_images
@@ -27,7 +28,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
-          name: myImage
+          name: docker-review
       - name: run_container
         run: |
           docker run -d -p 4000:3000 docker-review
